@@ -1,6 +1,5 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.xml.transform.stream.StreamSource;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -41,13 +40,19 @@ public class Part1 {
         String[] lines = inputs.split("\n");
 
 //        int chunkSize = 1;
-//        String[][] rockPaperScissors = (String[][]) IntStream
+//        String[][] rockPaperScissors =
+//                (String[][])
+//                IntStream
 //                .iterate(0, i -> i + chunkSize)
 //                .limit((int) Math.ceil((double) lines.length / chunkSize))
 //                .mapToObj(j -> (Arrays.copyOfRange(lines, j, Math.min(lines.length, j + chunkSize))))
 //                .toArray(String[][]::new);
+//
+//        System.out.println(Arrays.deepToString(rockPaperScissors));
+
 
         String[][] rps = new String[lines.length][2];
+
         int i = 0;
         for (String line : lines) {
             rps[i] = line.split(" ");
