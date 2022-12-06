@@ -9,7 +9,7 @@ public class Part2 extends Part1 {
         Collections.sort(elves);
         int numberOfElves = elves.size();
         return elves.get(numberOfElves - 1) +
-                            elves.get(numberOfElves - 2) +
-                            elves.get(numberOfElves - 3);
+                elves.get(numberOfElves - 2) +
+                elves.get(numberOfElves - 3);
     }
 }

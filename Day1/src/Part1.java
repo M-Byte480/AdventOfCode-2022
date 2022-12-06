@@ -55,7 +55,7 @@ public class Part1 {
             }
         }
 
-return max;
+        return max;
         // */
     }
 }
