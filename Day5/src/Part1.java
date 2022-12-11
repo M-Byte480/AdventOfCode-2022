@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Part1 {
     String input;
-    String path = "Day5.2\\src\\crates.txt";
+    String path = "Day5\\src\\crates.txt";
     String[] lines;
 
     public Part1() {
