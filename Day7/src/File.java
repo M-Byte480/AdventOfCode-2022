@@ -1,10 +1,9 @@
 public class File {
     String name;
     int size;
-    File(String content){
-        String[] contents = content.split(" ");
-        String name = contents[1];
-        int size = Integer.parseInt(contents[0]);
+    File(String name, int size){
+        this.name = name;
+        this.size = size;
     }
 
     public int getSize() {

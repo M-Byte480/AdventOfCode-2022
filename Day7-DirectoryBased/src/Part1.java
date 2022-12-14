@@ -81,4 +81,74 @@ public class Part1 implements Runnable {
         }
         System.out.println(sum);
     }
+
+//    private void setDirs(String[] dirs) {
+//        Part1.dirs = dirs;
+//    }
+
+//    public static ArrayList<Directory> getDirectory(String name, int position) {
+//
+//        ArrayList<String> contents = new ArrayList<>();
+//        for (int i = position; i < dirs.length; i++) {
+//            if (dirs[i].equals("$ cd " + name)) {
+//                i += 2;
+//                position = i;
+//                while (!dirs[i].contains("$ cd")) {
+//                    contents.add(dirs[i]);
+//                    i++;
+//                }
+//                break;
+//            }
+//        }
+//        ArrayList<Directory> directoryList = new ArrayList<>();
+//        ArrayList<File> fileContents = new ArrayList<>();
+//
+//        for (String content : contents) {
+//            if (content.contains("dir")) {
+//                directoryList.add(new Directory(content, getDirectory(content.substring("dir ".length()), position), getFiles(content.substring("dir ".length()), position)));
+//            } else {
+//                fileContents.add(new File(content));
+//            }
+//        }
+//        return directoryList;
+//    }
+
+//    public static ArrayList<File> getFiles(String name, int position) {
+//        ArrayList<String> contents = new ArrayList<>();
+//
+//        for (int i = position; i < dirs.length; i++) {
+//            if (dirs[i].equals("$ cd " + name)) {
+//                i += 2;
+//                while (!dirs[i].contains("$ cd")) {
+//                    contents.add(dirs[i]);
+//                    i++;
+//                }
+//                break;
+//            }
+//        }
+//
+//        ArrayList<File> fileContents = new ArrayList<>();
+//
+//        for (String content : contents) {
+//            if (!(content.contains("dir"))) {
+//                fileContents.add(new File(content));
+//            }
+//        }
+//        return fileContents;
+//    }
+
+
+//    public static int numberOfDirectories(Directory root, int number) {
+//        int sum = 0;
+//        if (root.getDirectories().size() == 0) {
+//            return (root.getDirectorySize() <= number ? sum + root.getDirectorySize() : sum);
+//        } else {
+//            for (Directory dir : root.getDirectories()) {
+//                sum += numberOfDirectories(dir, number);
+//            }
+//            sum += (root.getDirectorySize() <= number ? root.getDirectorySize() : 0);
+//        }
+//
+//        return sum;
+//    }
 }

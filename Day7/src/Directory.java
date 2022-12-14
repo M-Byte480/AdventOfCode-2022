@@ -1,32 +1,38 @@
 import java.util.ArrayList;
 
 public class Directory {
-    ArrayList<Directory> directories = new ArrayList<>();
-    ArrayList<File> files = new ArrayList<>();
-    String name;
 
+    private String name;
+    private ArrayList<Directory> children = new ArrayList<>();
+    private ArrayList<File> files = new ArrayList<>();
+    private Directory parent;
+    private int size;
 
-    public Directory(String name, ArrayList<Directory> directories, ArrayList<File> files){
+    public Directory(String name, Directory parent){
         this.name = name;
-        this.files = files;
-        this.directories = directories;
+        this.parent = parent;
     }
 
     public Directory(String name){
         this.name = name;
     }
 
-    public boolean containsDirectory() {
-        return directories.size() > 0;
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<Directory> getDirectories() {
-        return this.directories;
+    public Directory getParent(){
+        return parent;
     }
 
-    public void setDirectories(ArrayList<Directory> directories) {
-        this.directories = directories;
+    public void addChild(Directory dir){
+        this.children.add(dir);
     }
+
+    public void addFile(File file){
+        this.files.add(file);
+    }
+
 
     public void setFiles(ArrayList<File> files) {
         this.files = files;
@@ -36,23 +42,23 @@ public class Directory {
         return this.name;
     }
 
-    public String getContents(){
-        return this.name + "\n" +
-                this.files.toString() + "\n"+
-                this.directories.toString() + "\n";
-    }
 
     public int getDirectorySize(){
         int total = 0;
-        for (File file :
-                files) {
+        for (File file : files) {
             total += file.getSize();
         }
-        for(Directory directory : directories){
+        for(Directory directory : children){
             total += directory.getDirectorySize();
         }
         return total;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
 
+    public int getSize() {
+        return size;
+    }
 }
