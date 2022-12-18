@@ -97,13 +97,16 @@ public class Part1 implements Runnable {
                         continue label;
                     }
                 }
+
                 if((map[nr][nc].charAt(0)) - (map[r][c].charAt(0)) > 1){
                     continue;
                 }
+
                 if(nr == er && nc == ec){
                     System.out.println("Part 1 : " + (d+1));
                     return;
                 }
+
                 visited.add(new Integer[]{nr, nc});
                 queue.add(new Integer[]{d + 1, nr, nc});
             }
